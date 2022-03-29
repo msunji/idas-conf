@@ -4,6 +4,13 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    colors: {
+      transparent: 'transparent',
+      white: '#ffffff',
+      blue100: '#001DA8',
+      yellow: '#F9C900',
+      magenta: '#d42f69',
+    },
     fontFamily: {
       serif: ['Playfair Display', 'serif'],
     },
