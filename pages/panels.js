@@ -1,6 +1,7 @@
+import getData from '../utils/getData';
 import PageHeader from '../components/layout/PageHeader';
 
-const Panels = () => {
+const Panels = ({ panels }) => {
   return (
     <>
       <PageHeader pageTitle="Panels">
@@ -14,3 +15,21 @@ const Panels = () => {
 };
 
 export default Panels;
+
+export async function getStaticProps() {
+  const query = `
+    {
+      panels {
+        id
+        content
+        panelTitle
+      }
+    }
+  `;
+
+  const { panels } = await getData(query);
+
+  return {
+    props: { panels },
+  };
+}
