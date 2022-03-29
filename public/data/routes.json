@@ -2,13 +2,14 @@
   {
     "page": "Home",
     "route": "/",
-    "withDropdown": false
+    "withDropdown": false,
+    "dropdownLinks": []
   },
   {
     "page": "Program",
     "route": "",
     "withDropdown": true,
-    "pages": [
+    "dropdownLinks": [
       {
         "page": "Speakers",
         "route": "/speakers"
@@ -26,6 +27,7 @@
   {
     "page": "Submissions",
     "route": "/submissions",
-    "withDropdown": false
+    "withDropdown": false,
+    "dropdownLinks": []
   }
 ]
