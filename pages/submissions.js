@@ -20,7 +20,7 @@ const Submissions = () => {
       </section>
       <section className="container">
         <h2>Information</h2>
-        <div className="space-y-4 mb-12">
+        <div className="content">
           <p>
             A document containing an abstract (1,000 words max) and a brief
             biography (100 words) should be submitted before{' '}
@@ -39,14 +39,14 @@ const Submissions = () => {
           </Highlight>
         </div>
         <h2>Topics Covered</h2>
-        <div className="space-y-5 mb-12">
+        <div className="content">
           <p>
             In line with this year's theme, we welcome papers and abstracts that
             fall under any of the themes stated below.
           </p>
         </div>
         <h2>Submit a Paper</h2>
-        <div className="space-y-4 mb-12">
+        <div className="content">
           <p>
             Your file must either be a PDF or a Microsoft Word file, and must be
             5MB or smaller. For larger files, please email us at
