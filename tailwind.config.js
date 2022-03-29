@@ -10,6 +10,7 @@ module.exports = {
       blue100: '#001DA8',
       yellow: '#F9C900',
       magenta: '#d42f69',
+      magentaLight: '#FFDFEA',
     },
     fontFamily: {
       serif: ['Playfair Display', 'serif'],
