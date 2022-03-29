@@ -1,3 +1,5 @@
+import PageHeader from '../components/layout/PageHeader';
+
 const Highlight = ({ children }) => {
   return (
     <p className="bg-magentaLight border-l-4 border-l-magenta py-6 px-6">
@@ -9,15 +11,12 @@ const Highlight = ({ children }) => {
 const Submissions = () => {
   return (
     <>
-      <section className="bg-magenta">
-        <div className="container">
-          <h1>Submissions</h1>
-          <p>
-            We are calling for both paper and abstract submissions for this
-            year&apos;s conference.
-          </p>
-        </div>
-      </section>
+      <PageHeader pageTitle="Submissions">
+        <p>
+          We are calling for both paper and abstract submissions for this
+          year&apos;s conference.
+        </p>
+      </PageHeader>
       <section className="container">
         <h2>Information</h2>
         <div className="content">
@@ -41,8 +40,8 @@ const Submissions = () => {
         <h2>Topics Covered</h2>
         <div className="content">
           <p>
-            In line with this year's theme, we welcome papers and abstracts that
-            fall under any of the themes stated below.
+            In line with this year&apos;s theme, we welcome papers and abstracts
+            that fall under any of the themes stated below.
           </p>
         </div>
         <h2>Submit a Paper</h2>
