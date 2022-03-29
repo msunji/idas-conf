@@ -1,0 +1,31 @@
+[
+  {
+    "page": "Home",
+    "route": "/",
+    "withDropdown": false
+  },
+  {
+    "page": "Program",
+    "route": "",
+    "withDropdown": true,
+    "pages": [
+      {
+        "page": "Speakers",
+        "route": "/speakers"
+      },
+      {
+        "page": "Panels",
+        "route": "/panels"
+      },
+      {
+        "page": "Agenda",
+        "route": "/agenda"
+      }
+    ]
+  },
+  {
+    "page": "Submissions",
+    "route": "/submissions",
+    "withDropdown": false
+  }
+]
