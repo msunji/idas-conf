@@ -9,6 +9,7 @@
     margin: 0;
     scroll-behavior: smooth;
     @apply leading-relaxed;
+    @apply text-blue300;
   }
   * {
     @apply box-border;
