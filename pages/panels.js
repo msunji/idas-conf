@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import getData from '../utils/getData';
-import { serialize } from 'next-mdx-remote/serialize';
+import getMarkdown from '../utils/getMarkdown';
 import { MDXRemote } from 'next-mdx-remote';
 import PageHeader from '../components/layout/PageHeader';
 
@@ -63,11 +63,7 @@ export async function getStaticProps() {
 
   const { panels } = await getData(query);
 
-  const panelsSource = await Promise.all(
-    panels.map(async (panel) => {
-      return { ...panel, panelWriteup: await serialize(panel.panelWriteup) };
-    })
-  );
+  const panelsSource = await getMarkdown(panels, 'panelWriteup');
 
   return {
     props: {
