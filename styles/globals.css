@@ -8,6 +8,7 @@
     padding: 0;
     margin: 0;
     scroll-behavior: smooth;
+    @apply leading-relaxed;
   }
   * {
     @apply box-border;
@@ -31,14 +32,11 @@
   section {
     @apply py-11 md:py-16;
   }
-  p {
-    @apply leading-relaxed;
-    @apply max-w-prose;
-  }
 }
 
 @layer components {
   .content {
     @apply space-y-5 mb-12;
+    @apply max-w-prose;
   }
 }
