@@ -19,17 +19,29 @@ const Panels = ({ panelsSource }) => {
         politics and international relations in the Asia-Pacific region.
       </PageHeader>
 
-      <section className="container gap-12 grid md:grid-cols-[220px_1fr]">
-        <div>
+      <section className="container divide-y divide-grey gap-12 grid md:divide-y-0 md:grid-cols-[220px_1fr]">
+        <div className="space-y-3">
           <h3>Topics</h3>
           {panelsSource.map(({ id, panelTitle }) => (
-            <div key={id} onClick={() => setContent(panelTitle)}>
-              {panelTitle}
+            <div
+              key={id}
+              onClick={() => setContent(panelTitle)}
+              className="cursor-pointer"
+            >
+              <span
+                className={`${
+                  panelTitle === content
+                    ? 'font-semibold underline decoration-yellow decoration-4 underline-offset-2'
+                    : ''
+                }`}
+              >
+                {panelTitle}
+              </span>
             </div>
           ))}
         </div>
         <div className="content">
-          <h2>{filteredPanel[0].panelTitle}</h2>
+          <h2 className="mt-8 md:mt-0">{filteredPanel[0].panelTitle}</h2>
           <MDXRemote {...filteredPanel[0].panelWriteup} />
         </div>
       </section>
