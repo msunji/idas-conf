@@ -6,9 +6,7 @@ import PageContent from '../components/layout/PageContent';
 import PageHeader from '../components/layout/PageHeader';
 
 const Panels = ({ panelsSource }) => {
-  console.log(panelsSource);
   const [content, setContent] = useState('Democracy and Governance Innovation');
-
   let filteredPanel = panelsSource.filter(
     (panel) => panel.panelTitle === content
   );
@@ -64,7 +62,6 @@ export async function getStaticProps() {
   `;
 
   const { panels } = await getData(query);
-
   const panelsSource = await getMarkdown(panels, 'panelWriteup');
 
   return {

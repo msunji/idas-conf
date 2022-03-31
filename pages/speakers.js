@@ -30,7 +30,6 @@ const Speaker = ({ name, title, bio, photo, profileLink }) => {
 };
 
 const Speakers = ({ speakersSource }) => {
-  console.log(speakersSource);
   return (
     <>
       <PageHeader pageTitle="Speakers" bgColor="violet">

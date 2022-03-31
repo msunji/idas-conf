@@ -1,5 +1,6 @@
 import PageContent from '../components/layout/PageContent';
 import PageHeader from '../components/layout/PageHeader';
+import Spacer from '../components/layout/Spacer';
 
 const Highlight = ({ children }) => {
   return (
@@ -38,11 +39,13 @@ const Submissions = () => {
               ** Full papers need to be sent no later than November 9 17:00
               GMT+8
             </Highlight>
+            <Spacer />
             <h2>Topics Covered</h2>
             <p>
               In line with this year&apos;s theme, we welcome papers and
               abstracts that fall under any of the themes stated below.
             </p>
+            <Spacer />
             <h2>Submit a Paper</h2>
             <p>
               Your file must either be a PDF or a Microsoft Word file, and must

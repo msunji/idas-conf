@@ -50,7 +50,7 @@ const Agenda = ({ eventsSource }) => {
                   tab === 'Saturday' ? 'text-blue300' : ''
                 }`}
               >
-                November 24
+                Nov 24
               </p>
             </div>
             <div
@@ -65,7 +65,7 @@ const Agenda = ({ eventsSource }) => {
               <p
                 className={`semibold ${tab === 'Sunday' ? 'text-blue300' : ''}`}
               >
-                November 25
+                Nov 25
               </p>
             </div>
           </div>
@@ -73,7 +73,9 @@ const Agenda = ({ eventsSource }) => {
             <h2>
               Showing events for{' '}
               <span className="text-magenta">
-                {tab === 'Saturday' ? 'Saturday, Nov 24' : 'Sunday, Nov 25'}
+                {tab === 'Saturday'
+                  ? 'Saturday, November 24'
+                  : 'Sunday, November 25'}
               </span>
             </h2>
           </div>
