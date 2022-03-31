@@ -1,60 +1,79 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import routes from '../../public/data/routes.json';
 import Link from 'next/link';
-import useOutsideClick from '../../utils/useOutsideClick';
 
-const Dropdown = ({ page, links, dropdownRef, open, toggleDropdown }) => {
+const Logo = () => {
   return (
-    <div className="relative">
-      <a className="cursor-pointer" onClick={toggleDropdown}>
-        {page}
-      </a>
-      <div className={`absolute flex flex-col ${open ? 'block' : 'hidden'}`}>
-        {links.map(({ page, route }) => (
-          <Link key={page} href={route}>
-            <a>{page}</a>
-          </Link>
-        ))}
-      </div>
+    <div className="hidden tablet:flex leading-tight">
+      <div className="w-6 h-6 bg-yellow rounded-full mr-2 -mt-2 self-start" />
+      <Link href="/">
+        <a className="text-blue100">
+          <span className="tracking-widest font-semibold text-sm leading-[0]">
+            2018 IDAS
+          </span>
+          <p className="text-2xl leading-[0.9rem] font-bold">Conference</p>
+        </a>
+      </Link>
     </div>
   );
 };
 
-const Navigation = () => {
-  const dropdownRef = useRef(null);
-  const [openDropdown, setOpenDropdown] = useOutsideClick(dropdownRef, false);
+const RegistrationBtn = () => {
+  return (
+    <button className="rounded-full uppercase bg-transparent border-2 border-magenta bg-magenta text-white py-1 px-4 font-semibold transition ease-in duration-200 hover:bg-transparent hover:text-white hover:border-white tablet:hover:border-magenta tablet:hover:text-magenta">
+      Register
+    </button>
+  );
+};
 
-  const handleDropdownToggle = () => setOpenDropdown(!openDropdown);
-  console.log(openDropdown);
+const Navigation = () => {
+  const [openMobile, setOpenMobile] = useState(false);
+
+  const handleMobileToggle = () => setOpenMobile(!openMobile);
+  const closeMobile = () => setOpenMobile(false);
 
   return (
-    <nav className="fixed top-0 left-0 bg-transparent w-screen tracking-wide">
-      <div className="container max-w-7xl py-10 flex justify-between items-center">
-        <div className="leading-tight flex">
-          <div className="w-6 h-6 bg-yellow rounded-full mr-2 -mt-2 self-start" />
-          <Link href="/">
-            <a className="text-blue100">
-              <span className="tracking-widest font-semibold text-sm leading-[0]">
-                2018 IDAS
-              </span>
-              <p className="text-2xl leading-[0.9rem] font-bold">Conference</p>
-            </a>
-          </Link>
+    <nav className="fixed top-0 left-0 z-10 w-screen">
+      <div className={`container relative tablet:hidden`}>
+        <div
+          className="absolute right-0 pt-8 px-[inherit]"
+          onClick={handleMobileToggle}
+        >
+          <div>
+            <div
+              className={`w-8 h-[2px] mb-[8px] transition linear duration-300 ${
+                openMobile
+                  ? 'bg-white rotate-45 translate-y-[5px]'
+                  : 'bg-blue300'
+              }`}
+            ></div>
+            <div
+              className={`w-8 h-[2px] transition linear duration-300 ${
+                openMobile
+                  ? 'bg-white -rotate-45 -translate-y-[5px]'
+                  : 'bg-blue300'
+              }`}
+            ></div>
+          </div>
         </div>
-
-        <ul className="flex flex-col tablet:flex-row gap-8">
+      </div>
+      <div
+        className={`container max-w-7xl w-full py-10 bg-violet h-screen text-white tracking-wide ${
+          openMobile ? 'flex flex-col justify-end' : 'hidden'
+        } tablet:flex tablet:flex-row tablet:h-auto tablet:justify-between tablet:items-center tablet:text-blue300 tablet:bg-transparent`}
+      >
+        <Logo />
+        <ul className="text-4xl w-full gap-6 flex flex-col tablet:w-auto tablet:flex-row tablet:text-base">
           {routes.map(({ page, route }) => (
-            <li key={page}>
-              <Link href={route}>
-                <a>{page}</a>
-              </Link>
-            </li>
+            <Link key={page} href={route}>
+              <a onClick={closeMobile}>
+                <li>{page}</li>
+              </a>
+            </Link>
           ))}
         </ul>
-
-        <button className="uppercase bg-transparent border-2 border-magenta text-magenta py-1 px-4 font-semibold transition ease-in duration-200 hover:bg-magenta hover:text-white ">
-          Register
-        </button>
+        <div className="h-px w-full my-8 bg-white block tablet:hidden" />
+        <RegistrationBtn />
       </div>
     </nav>
   );
