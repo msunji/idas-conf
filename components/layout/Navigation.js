@@ -52,8 +52,8 @@ const Navigation = () => {
           ))}
         </ul>
 
-        <button className="uppercase bg-magenta text-white">
-          <span className="uppercase">Register</span>
+        <button className="uppercase bg-transparent border-2 border-magenta text-magenta py-1 px-4 font-semibold transition ease-in duration-200 hover:bg-magenta hover:text-white ">
+          Register
         </button>
       </div>
     </nav>
