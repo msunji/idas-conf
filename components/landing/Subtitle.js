@@ -28,7 +28,7 @@ const Subtitle = () => {
         <div className="container">
           <p className="w-auto mb-4 tablet:max-w-[30ch] tablet:text-2xl">
             Join us this year at{' '}
-            <strong>National Chengchi University, Taipei</strong> on
+            <strong>National Chengchi University, Taipei</strong> on{' '}
             <strong>November 24-25</strong> for the annual IDAS International
             Conference.
           </p>
