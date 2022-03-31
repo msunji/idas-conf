@@ -9,10 +9,10 @@ const Event = ({ name, content, time, breaktime }) => {
   return (
     <div
       className={`gap-8 py-4 px-4 grid md:grid-cols-[100px_1fr] ${
-        breaktime ? 'bg-yellow' : ''
+        breaktime ? 'bg-blue' : ''
       }`}
     >
-      <div>{time}</div>
+      <span className="text-lg">{time}</span>
       <div>
         <h3 className="mb-1">{name}</h3>
         <MDXRemote {...content} />
@@ -35,12 +35,10 @@ const Agenda = ({ eventsSource }) => {
       </PageHeader>
       <PageContent>
         <div>
-          <div className="flex justify-center">
+          <div className="flex pl-8 mb-8 border-b border-grey">
             <div
-              className={`text-center px-8 mw-[200px] border-grey border py-2 text-grey100 ${
-                tab === 'Saturday'
-                  ? 'border-t-4 border-grey border-t-yellow border border-b-0 border-r-0'
-                  : ''
+              className={`cursor-pointer text-center px-8 mw-[200px] py-2 text-grey100 ${
+                tab === 'Saturday' ? 'agenda-tab-highlight' : ''
               }`}
               onClick={() => setTab('Saturday')}
             >
@@ -56,10 +54,8 @@ const Agenda = ({ eventsSource }) => {
               </p>
             </div>
             <div
-              className={`text-center px-8 mw-[200px] border-grey border py-2 ${
-                tab === 'Sunday'
-                  ? 'border-t-4 border-grey border-t-yellow border border-b-0 border-l-0'
-                  : ''
+              className={`cursor-pointer text-center px-8 mw-[200px] py-2 text-grey100 ${
+                tab === 'Sunday' ? 'agenda-tab-highlight' : ''
               }`}
               onClick={() => setTab('Sunday')}
             >
@@ -73,7 +69,15 @@ const Agenda = ({ eventsSource }) => {
               </p>
             </div>
           </div>
-          <div className="mt-2 space-y-2">
+          <div className="mb-8">
+            <h2>
+              Showing events for{' '}
+              <span className="text-magenta">
+                {tab === 'Saturday' ? 'Saturday, Nov 24' : 'Sunday, Nov 25'}
+              </span>
+            </h2>
+          </div>
+          <div className="divide-y divide-grey divide-dashed">
             {filteredEvents.map(
               ({ id, eventName, eventDetails, eventTime, breaktime }) => (
                 <Event
