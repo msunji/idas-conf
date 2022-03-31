@@ -22,17 +22,13 @@ const Footer = () => {
         <div className="basis-1/4">
           <h3>Site Map</h3>
           <ul>
-            {routes.map(({ page, route, withDropdown, dropdownLinks }) => {
-              return withDropdown ? (
-                <DropdownLinks key="dropdown" links={dropdownLinks} />
-              ) : (
-                <li key={page}>
-                  <Link href={route}>
-                    <a>{page}</a>
-                  </Link>
-                </li>
-              );
-            })}
+            {routes.map(({ page, route }) => (
+              <li key={page}>
+                <Link href={route}>
+                  <a>{page}</a>
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="basis-1/4">
