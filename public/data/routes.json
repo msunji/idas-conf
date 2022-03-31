@@ -1,33 +1,22 @@
 [
   {
     "page": "Home",
-    "route": "/",
-    "withDropdown": false,
-    "dropdownLinks": []
+    "route": "/"
   },
   {
-    "page": "Program",
-    "route": "",
-    "withDropdown": true,
-    "dropdownLinks": [
-      {
-        "page": "Speakers",
-        "route": "/speakers"
-      },
-      {
-        "page": "Panels",
-        "route": "/panels"
-      },
-      {
-        "page": "Agenda",
-        "route": "/agenda"
-      }
-    ]
+    "page": "Speakers",
+    "route": "/speakers"
+  },
+  {
+    "page": "Panels",
+    "route": "/panels"
+  },
+  {
+    "page": "Agenda",
+    "route": "/agenda"
   },
   {
     "page": "Submissions",
-    "route": "/submissions",
-    "withDropdown": false,
-    "dropdownLinks": []
+    "route": "/submissions"
   }
 ]
