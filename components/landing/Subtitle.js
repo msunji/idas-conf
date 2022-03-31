@@ -26,14 +26,17 @@ const Subtitle = () => {
       <TopWave />
       <section className="bg-violet text-white">
         <div className="container">
-          <p className="w-auto tablet:max-w-[35ch]">
+          <p className="w-auto mb-4 tablet:max-w-[30ch] tablet:text-2xl">
             Join us this year at{' '}
-            <strong>National Chengchi University, Taipei</strong> on{' '}
+            <strong>National Chengchi University, Taipei</strong> on
             <strong>November 24-25</strong> for the annual IDAS International
-            Conference. Organized by National Chengchi University&apos;s
-            International Doctoral Program in Asia-Pacific Studies (IDAS) , this
-            event boasts a number of highly-esteemed speakers and offers
-            students a chance to participate in a variety of panel discussions.
+            Conference.
+          </p>
+          <p className="w-auto tablet:max-w-[30ch] tablet:text-2xl">
+            Organized by National Chengchi University&apos;s International
+            Doctoral Program in Asia-Pacific Studies (IDAS) , this event
+            features a number of highly-esteemed speakers and offers students a
+            chance to participate in a variety of panel discussions.
           </p>
         </div>
       </section>
