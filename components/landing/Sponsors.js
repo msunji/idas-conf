@@ -14,9 +14,12 @@ const Sponsor = ({ path, altText, small }) => {
 
 const Sponsors = () => {
   return (
-    <section className="bg-blue100 text-white">
+    <section className="bg-blue200 text-white">
       <div className="container">
-        <p className="uppercase">Proudly sponsored by</p>
+        <p className="uppercase text-center text-sm tracking-widest mb-8">
+          Proudly sponsored by
+        </p>
+        <hr className="h-px bg-white w-[50px] mb-8 mx-auto opacity-40" />
         <div className="flex items-center justify-center gap-8">
           <Sponsor path={moeLogo} alt="Ministry of Education Logo" small />
           <Sponsor
