@@ -1,6 +1,7 @@
 import getData from '../utils/getData';
 import getMarkdown from '../utils/getMarkdown';
 import PageHeader from '../components/layout/PageHeader';
+import PageContent from '../components/layout/PageContent';
 import Image from 'next/image';
 
 const Speaker = ({ name, title, bio, photo, profileLink }) => {
@@ -23,7 +24,6 @@ const Speaker = ({ name, title, bio, photo, profileLink }) => {
           {name}
         </p>
         <p className="text-sm max-w-[80%]">{title}</p>
-        {/* <div className="wave-bg w-full h-4" /> */}
       </div>
     </div>
   );
@@ -33,30 +33,32 @@ const Speakers = ({ speakersSource }) => {
   console.log(speakersSource);
   return (
     <>
-      <PageHeader pageTitle="Speakers">
+      <PageHeader pageTitle="Speakers" bgColor="violet">
         This year&apos;s international conference features an exciting line-up
         of speakers with a wide range of experience in their respective fields
         of research. We can&apos;t wait for you to meet them.
       </PageHeader>
-      <section className="container gap-8 grid sm:grid-cols-2 md:grid-cols-3">
-        {speakersSource.map(
-          ({
-            speakerName,
-            id,
-            speakerBio,
-            speakerTitle,
-            speakerProfileLink,
-            photo,
-          }) => (
-            <Speaker
-              key={id}
-              name={speakerName}
-              title={speakerTitle}
-              photo={photo}
-            />
-          )
-        )}
-      </section>
+      <PageContent>
+        <div className="gap-8 grid sm:grid-cols-2 md:grid-cols-3">
+          {speakersSource.map(
+            ({
+              speakerName,
+              id,
+              speakerBio,
+              speakerTitle,
+              speakerProfileLink,
+              photo,
+            }) => (
+              <Speaker
+                key={id}
+                name={speakerName}
+                title={speakerTitle}
+                photo={photo}
+              />
+            )
+          )}
+        </div>
+      </PageContent>
     </>
   );
 };
