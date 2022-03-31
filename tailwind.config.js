@@ -11,6 +11,7 @@ module.exports = {
       grey100: '#969696',
       blue: '#f1fbff',
       blue100: '#001DA8',
+      blue200: '#020280',
       blue300: '#2A2A2A',
       yellow: '#F9C900',
       violet: '#5629BE',
