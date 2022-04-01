@@ -33,11 +33,22 @@
   section {
     @apply py-11 md:py-16;
   }
+  a {
+    @apply font-semibold;
+    @apply hover:underline;
+  }
 }
 
 @layer components {
   .content {
     @apply space-y-5 mb-12;
+  }
+  .low-highlight {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 50%,
+      #f9c900 50%
+    );
   }
   .agenda-tab-highlight {
     box-shadow: inset 0 -4px #f9c900;
