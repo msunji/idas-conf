@@ -1,13 +1,34 @@
+import Link from 'next/link';
 const Hero = () => {
   return (
-    <header className="container">
-      <p>2018 IDAS International Conference</p>
-      <h1 className="text-4xl font-serif">
-        Transformation and Challenges in Asia Pacific: The Next Decade and
-        Beyond
-      </h1>
-      <p>November 24-25</p>
-      <p>National Chengchi University, Taipei</p>
+    <header className="pt-20 pb-20 md:pb-40 flex flex-col items-center">
+      <p className="tracking-widest mb-6 text-center">
+        November 24-45 — National Chengchi University
+      </p>
+      <div className="container max-w-4xl mb-8 text-blue100">
+        <h1 className="text-4xl md:text-5xl text-center font-serif">
+          Transformation and Challenges in Asia Pacific
+          <br />
+          <span className="text-3xl">The Next Decade and Beyond</span>
+        </h1>
+      </div>
+      <div className="container flex flex-col text-grey100 gap-4 justify-center  items-center text-2xl md:flex-row">
+        <Link href="/#register" passHref>
+          <a>
+            <button className="border border-2 border-yellow rounded-full py-1 px-6 bg-yellow text-blue300 hover:bg-transparent">
+              Register Now
+            </button>
+          </a>
+        </Link>
+
+        <Link href="/submissions" passHref>
+          <a>
+            <button className="border border-2 border-green text-green rounded-full py-1 px-6 hover:bg-green hover:text-blue300">
+              Submissions
+            </button>
+          </a>
+        </Link>
+      </div>
     </header>
   );
 };
