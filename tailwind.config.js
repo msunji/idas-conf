@@ -17,6 +17,7 @@ module.exports = {
       yellow: '#F9C900',
       violet: '#5629BE',
       salmon: '#ffa6a6',
+      green: '#00b587',
       magenta: '#d42f69',
       magentaLight: '#FFDFEA',
     },
