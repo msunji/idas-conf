@@ -21,52 +21,55 @@ const Registration = () => {
   } = useForm({ resolver: yupResolver(schema) });
   const onSubmit = (data) => console.log(data);
   return (
-    <section id="register" className="container grid gap-8 tablet:grid-cols-2">
-      <div>
-        <Image src={registerImg} alt="Picture of a group of people" />
-      </div>
-      <div>
-        <h2 className="mb-6 md:text-4xl">Keen to join us?</h2>
-        <form className="landing-text" onSubmit={handleSubmit(onSubmit)}>
-          <div className="mb-8">
-            <label className="block mb-4">
-              <span>Full name</span>
-              <input
-                type="text"
-                className="mt-0 block w-full tablet:w-5/6 px-2 border-0 border-b-2 border-gray focus:ring-0 focus:border-yellow"
-                {...register('fullName')}
-              />
-              {errors.email?.message && (
-                <FormError>{errors.email?.message}</FormError>
-              )}
-            </label>
-            <label className="block mb-4">
-              <span>Email address</span>
-              <input
-                type="text"
-                className="mt-0 block w-full tablet:w-5/6 px-2 border-0 border-b-2 border-gray focus:ring-0 focus:border-yellow"
-                {...register('email')}
-              />
-              {errors.email?.message && (
-                <FormError>{errors.email?.message}</FormError>
-              )}
-            </label>
-          </div>
+    <div className="relative" id="register">
+      <div className="bg-violet h-[15rem] w-[15rem] rounded-full absolute -top-[8rem] -left-[5rem] tablet:h-[26rem] tablet:w-[26rem] tablet:-top-[15rem] tablet:-left-[10rem]" />
+      <div className="container grid gap-8 py-11 md:py-16 tablet:grid-cols-2 bg-yellow">
+        <div className="self-center">
+          <Image src={registerImg} alt="Picture of a group of people" />
+        </div>
+        <div>
+          <h2 className="mb-6 md:text-4xl">Keen to join us?</h2>
+          <form className="landing-text" onSubmit={handleSubmit(onSubmit)}>
+            <div className="mb-8">
+              <label className="block mb-4">
+                <span>Full name</span>
+                <input
+                  type="text"
+                  className="mt-0 block w-full tablet:w-5/6 px-2 border-0 border-b-2 border-gray focus:ring-0 focus:border-yellow"
+                  {...register('fullName')}
+                />
+                {errors.email?.message && (
+                  <FormError>{errors.email?.message}</FormError>
+                )}
+              </label>
+              <label className="block mb-4">
+                <span>Email address</span>
+                <input
+                  type="text"
+                  className="mt-0 block w-full tablet:w-5/6 px-2 border-0 border-b-2 border-gray focus:ring-0 focus:border-yellow"
+                  {...register('email')}
+                />
+                {errors.email?.message && (
+                  <FormError>{errors.email?.message}</FormError>
+                )}
+              </label>
+            </div>
 
-          <button
-            type="submit"
-            className="bg-blue300 text-white px-4 py-2 hover:bg-yellow hover:text-blue300 focus:ring-0 focus:outline-yellow"
-          >
-            Register Now
-          </button>
-          <div>
-            {isSubmitSuccessful && (
-              <FormSuccess>Registration completed!</FormSuccess>
-            )}
-          </div>
-        </form>
+            <button
+              type="submit"
+              className="bg-blue300 text-white px-4 py-2 hover:bg-violet focus:ring-0 focus:outline-yellow"
+            >
+              Register Now
+            </button>
+            <div>
+              {isSubmitSuccessful && (
+                <FormSuccess>Registration completed!</FormSuccess>
+              )}
+            </div>
+          </form>
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 
