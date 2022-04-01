@@ -54,7 +54,6 @@ const Navigation = () => {
 
   useEffect(() => {
     let threshold = clientWindowHeight / 600;
-    console.log(threshold);
     if (threshold > 0) {
       setNavBg('bg-white');
       setNavPadding('py-5');
