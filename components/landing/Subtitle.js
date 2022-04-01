@@ -28,10 +28,10 @@ const Subtitle = () => {
   return (
     <>
       <TopWave />
-      <div className="bg-salmon py-8">
+      <div className="bg-salmon py-8 landing-text">
         <div className="container grid tablet:grid-cols-2 tablet:items-center">
           <div className="">
-            <p className="w-auto mb-4 tablet:max-w-[30ch] tablet:text-2xl">
+            <p className="w-auto mb-4 tablet:max-w-[30ch]">
               Join us this year at{' '}
               <strong className="low-highlight">
                 National Chengchi University, Taipei
@@ -39,7 +39,7 @@ const Subtitle = () => {
               on <strong className="low-highlight">November 24-25</strong> for
               the annual IDAS International Conference.
             </p>
-            <p className="w-auto tablet:max-w-[30ch] tablet:text-2xl">
+            <p className="w-auto tablet:max-w-[30ch]">
               Organized by National Chengchi University&apos;s International
               Doctoral Program in Asia-Pacific Studies (IDAS) , this event
               features a number of highly-esteemed speakers and offers students
