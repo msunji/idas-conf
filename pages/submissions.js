@@ -85,8 +85,11 @@ const Submissions = () => {
           </p>
           <ol className="ml-4">
             {themes.map((theme) => (
-              <li key={theme}>
-                <span className="mr-2 text-magenta">—</span> {theme}
+              <li
+                key={theme}
+                className="before:content-['—'] before:text-magenta before:mr-4"
+              >
+                {theme}
               </li>
             ))}
           </ol>
