@@ -2,6 +2,7 @@ import Head from 'next/head';
 import getData from '../utils/getData';
 import Hero from '../components/landing/Hero';
 import Subtitle from '../components/landing/Subtitle';
+import Registration from '../components/landing/Registration';
 import Faqs from '../components/landing/Faqs';
 import Sponsors from '../components/landing/Sponsors';
 
@@ -17,6 +18,7 @@ export default function Home({ faqs }) {
         <Hero />
         <Subtitle />
         <Faqs faqs={faqs} />
+        <Registration />
         <Sponsors />
       </main>
     </div>
