@@ -8,7 +8,7 @@ import PageHeader from '../components/layout/PageHeader';
 const Event = ({ name, content, time, breaktime }) => {
   return (
     <div
-      className={`gap-8 py-4 px-4 grid md:grid-cols-[100px_1fr] ${
+      className={`gap-2 tablet:gap-8 py-4 px-4 grid md:grid-cols-[100px_1fr] ${
         breaktime ? 'bg-blue' : ''
       }`}
     >
@@ -35,7 +35,7 @@ const Agenda = ({ eventsSource }) => {
       </PageHeader>
       <PageContent>
         <div>
-          <div className="flex pl-8 mb-8 border-b border-grey">
+          <div className="w-full flex mb-8 border-b border-grey">
             <div
               className={`cursor-pointer text-center px-8 mw-[200px] py-2 text-grey100 ${
                 tab === 'Saturday' ? 'agenda-tab-highlight' : ''
