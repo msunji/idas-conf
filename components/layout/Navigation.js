@@ -1,13 +1,19 @@
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 import routes from '../../public/data/routes.json';
 import Link from 'next/link';
+
+const useCheckPage = () => {
+  const router = useRouter();
+  return router.pathname === '/' ? true : false;
+};
 
 const Logo = () => {
   return (
     <div className="hidden tablet:flex leading-tight">
       <div className="w-6 h-6 bg-yellow rounded-full mr-2 -mt-2 self-start" />
       <Link href="/">
-        <a className="text-blue100">
+        <a className="nav-logo  text-blue-100">
           <span className="tracking-widest font-semibold text-sm leading-[0]">
             2018 IDAS
           </span>
@@ -20,17 +26,19 @@ const Logo = () => {
 
 const RegistrationBtn = () => {
   return (
-    <button className="rounded-full uppercase bg-transparent border-2 border-magenta bg-magenta text-white py-1 px-4 font-semibold transition ease-in duration-200 hover:bg-transparent hover:text-white hover:border-white tablet:hover:border-magenta tablet:hover:text-magenta">
+    <button className="rounded-full uppercase bg-transparent border-2 border-magenta bg-magenta text-white py-1 px-4 font-semibold transition ease-in duration-200 hover:bg-transparent hover:text-white hover:border-white tablet:text-magenta tablet:hover:border-magenta tablet:hover:text-magenta">
       Register
     </button>
   );
 };
 
 const Navigation = () => {
+  const { pathname } = useRouter();
   const [openMobile, setOpenMobile] = useState(false);
 
   const handleMobileToggle = () => setOpenMobile(!openMobile);
   const closeMobile = () => setOpenMobile(false);
+  useCheckPage();
 
   return (
     <nav className="fixed top-0 left-0 z-10 w-screen">
@@ -58,16 +66,24 @@ const Navigation = () => {
         </div>
       </div>
       <div
-        className={`container max-w-7xl w-full py-10 bg-violet h-screen text-white tracking-wide ${
+        className={`container max-w-7xl w-screen py-10 bg-violet h-screen text-white tracking-wide ${
           openMobile ? 'flex flex-col justify-end' : 'hidden'
         } tablet:flex tablet:flex-row tablet:h-auto tablet:justify-between tablet:items-center tablet:text-blue300 tablet:bg-transparent`}
       >
         <Logo />
-        <ul className="text-4xl w-full gap-6 flex flex-col tablet:w-auto tablet:flex-row tablet:text-base">
+        <ul className="text-4xl w-full gap-4 flex flex-col tablet:w-auto tablet:flex-row tablet:text-base">
           {routes.map(({ page, route }) => (
-            <Link key={page} href={route}>
-              <a onClick={closeMobile}>
-                <li>{page}</li>
+            <Link key={page} href={route} passHref>
+              <a className="hover:no-underline" onClick={closeMobile}>
+                <li>
+                  <span
+                    className={`py-1 px-1 ${
+                      pathname == route ? 'bg-yellow' : ''
+                    } hover:bg-yellow`}
+                  >
+                    {page}
+                  </span>
+                </li>
               </a>
             </Link>
           ))}
