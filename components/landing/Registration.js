@@ -21,7 +21,7 @@ const Registration = () => {
   } = useForm({ resolver: yupResolver(schema) });
   const onSubmit = (data) => console.log(data);
   return (
-    <div className="relative" id="register">
+    <div className="relative" id="registration">
       <div className="bg-violet h-[15rem] w-[15rem] rounded-full absolute -top-[8rem] -left-[5rem] tablet:h-[26rem] tablet:w-[26rem] tablet:-top-[15rem] tablet:-left-[10rem]" />
       <div className="container grid gap-8 py-11 md:py-16 tablet:grid-cols-2 bg-yellow">
         <div className="self-center">
