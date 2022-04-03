@@ -6,14 +6,14 @@ const Hero = () => {
         November 24-45 — National Chengchi University
       </p>
       <div className="container max-w-4xl mb-8 text-blue100">
-        <h1 className="text-4xl md:text-5xl text-center font-serif">
+        <h1 className="text-4xl md:text-6xl text-center font-serif">
           Transformation and Challenges in Asia Pacific
           <br />
           <span className="text-3xl">The Next Decade and Beyond</span>
         </h1>
       </div>
-      <div className="container flex flex-col text-grey100 gap-4 justify-center  items-center text-2xl md:flex-row">
-        <Link href="/#register" passHref>
+      <div className="container flex text-grey100 gap-4 justify-center  items-center text-md tablet:text-2xl md:flex-row">
+        <Link href="/#registration" passHref>
           <a>
             <button className="border border-2 border-yellow rounded-full py-1 px-6 bg-yellow text-blue300 hover:bg-transparent">
               Register Now
