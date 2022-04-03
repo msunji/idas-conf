@@ -7,7 +7,7 @@ const CustomHead = ({ pageTitle }) => {
         2018 IDAS International Conference |{' '}
         {pageTitle
           ? `${pageTitle}`
-          : `Transformation and Challenges in Asia Pacific: The Next Decade and Beyond`}
+          : `Transformation and Challenges in Asia Pacific`}
       </title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <meta
