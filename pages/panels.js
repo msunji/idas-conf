@@ -2,6 +2,7 @@ import { useState } from 'react';
 import getData from '../utils/getData';
 import getMarkdown from '../utils/getMarkdown';
 import { MDXRemote } from 'next-mdx-remote';
+import CustomHead from '../components/CustomHead';
 import PageContent from '../components/layout/PageContent';
 import PageHeader from '../components/layout/PageHeader';
 
@@ -13,6 +14,7 @@ const Panels = ({ panelsSource }) => {
 
   return (
     <>
+      <CustomHead pageTitle="Conference Panel Themes" />
       <PageHeader pageTitle="Panels" bgColor="magenta">
         Join any of our five fascinating panels and get to know know more about
         politics and international relations in the Asia-Pacific region.

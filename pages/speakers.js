@@ -1,4 +1,5 @@
 import getData from '../utils/getData';
+import CustomHead from '../components/CustomHead';
 import PageHeader from '../components/layout/PageHeader';
 import PageContent from '../components/layout/PageContent';
 import Image from 'next/image';
@@ -38,6 +39,7 @@ const Speaker = ({ name, title, photo, slug }) => {
 const Speakers = ({ speakers }) => {
   return (
     <>
+      <CustomHead pageTitle="Our Featured Speakers" />
       <PageHeader pageTitle="Speakers">
         This year&apos;s international conference features an exciting line-up
         of speakers with a wide range of experience in their respective fields

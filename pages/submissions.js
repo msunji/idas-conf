@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { string, object, mixed } from 'yup';
+import CustomHead from '../components/CustomHead';
 import FormError from '../components/form/FormError';
 import FormSuccess from '../components/form/FormSuccess';
 import PageContent from '../components/layout/PageContent';
@@ -54,6 +55,7 @@ const Submissions = () => {
   };
   return (
     <>
+      <CustomHead pageTitle="Call for Papers and Abstracts" />
       <PageHeader pageTitle="Submissions">
         We are calling for both paper and abstract submissions for this
         year&apos;s conference.

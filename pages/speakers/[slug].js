@@ -2,6 +2,7 @@ import getData from '../../utils/getData';
 import Globe from '../../public/assets/images/icons/Globe';
 import LeftArrow from '../../public/assets/images/icons/LeftArrow';
 import { serialize } from 'next-mdx-remote/serialize';
+import CustomHead from '../../components/CustomHead';
 import PageHeader from '../../components/layout/PageHeader';
 import PageContent from '../../components/layout/PageContent';
 import { MDXRemote } from 'next-mdx-remote';
@@ -13,6 +14,7 @@ const Speaker = ({ speaker }) => {
     speaker;
   return (
     <>
+      <CustomHead pageTitle={speakerName} />
       <PageHeader pageTitle={''}></PageHeader>
       <PageContent>
         <div className="grid mx-auto max-w-[75%] gap-2 mb-8 bg-violet text-white md:max-w-full md:gap-8 md:grid-cols-[300px_1fr]">
