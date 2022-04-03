@@ -26,7 +26,7 @@ const Logo = () => {
 
 const RegistrationBtn = () => {
   return (
-    <button className="rounded-full uppercase bg-transparent border-2 border-magenta bg-magenta text-white py-1 px-4 font-semibold transition ease-in duration-200 hover:bg-transparent hover:text-white hover:border-white tablet:text-magenta tablet:hover:border-magenta tablet:hover:text-magenta">
+    <button className="rounded-full uppercase bg-transparent bg-magenta text-white py-1 px-4 font-semibold transition ease-in duration-200 hover:bg-yellow">
       Register
     </button>
   );
@@ -94,7 +94,7 @@ const Navigation = () => {
         } tablet:flex tablet:flex-row tablet:h-auto tablet:justify-between tablet:items-center tablet:text-blue300 tablet:bg-transparent`}
       >
         <Logo />
-        <ul className="text-4xl w-full gap-4 flex flex-col tablet:w-auto tablet:flex-row tablet:text-base">
+        <ul className="text-4xl gap-4 flex flex-col tablet:w-auto tablet:flex-row tablet:text-base">
           {routes.map(({ page, route }) => (
             <Link key={page} href={route} passHref>
               <a className="hover:no-underline" onClick={closeMobile}>
