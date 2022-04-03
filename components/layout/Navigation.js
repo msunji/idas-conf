@@ -24,11 +24,18 @@ const Logo = () => {
   );
 };
 
-const RegistrationBtn = () => {
+const RegistrationBtn = ({ closeMobile }) => {
   return (
-    <button className="rounded-full uppercase bg-transparent bg-magenta text-white py-1 px-4 font-semibold transition ease-in duration-200 hover:bg-yellow">
-      Register
-    </button>
+    <Link href="/#registration">
+      <a>
+        <button
+          className="rounded-full uppercase bg-transparent bg-magenta text-white py-2 px-8 font-semibold transition ease-in duration-200 hover:bg-yellow tablet:py-1 tablet:px-4"
+          onClick={closeMobile}
+        >
+          Register
+        </button>
+      </a>
+    </Link>
   );
 };
 
@@ -64,7 +71,9 @@ const Navigation = () => {
   }, [clientWindowHeight]);
 
   return (
-    <nav className={`fixed top-0 left-0 z-10 w-screen ${navBg}`}>
+    <nav
+      className={`fixed top-0 left-0 z-10 w-screen ${navBg} text-4xl tablet:text-base`}
+    >
       <div className={`container relative tablet:hidden`}>
         <div
           className="absolute right-0 pt-8 px-[inherit]"
@@ -94,7 +103,7 @@ const Navigation = () => {
         } tablet:flex tablet:flex-row tablet:h-auto tablet:justify-between tablet:items-center tablet:text-blue300 tablet:bg-transparent`}
       >
         <Logo />
-        <ul className="text-4xl gap-4 flex flex-col tablet:w-auto tablet:flex-row tablet:text-base">
+        <ul className="gap-4 flex flex-col tablet:w-auto tablet:flex-row">
           {routes.map(({ page, route }) => (
             <Link key={page} href={route} passHref>
               <a className="hover:no-underline" onClick={closeMobile}>
@@ -112,7 +121,7 @@ const Navigation = () => {
           ))}
         </ul>
         <div className="h-px w-full my-8 bg-white block tablet:hidden" />
-        <RegistrationBtn />
+        <RegistrationBtn closeMobile={closeMobile} />
       </div>
     </nav>
   );
