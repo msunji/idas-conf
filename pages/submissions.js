@@ -119,7 +119,12 @@ const Submissions = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="mb-8">
                 <label className="block mb-4">
-                  <span className="uppercase font-semibold">Full Name</span>
+                  <span className="uppercase font-semibold">
+                    Full Name
+                    <span className="font-semibold text-lg text-magenta ml-[2px]">
+                      *
+                    </span>
+                  </span>
                   <input
                     type="text"
                     className="mt-0 block w-full px-2 border-0 border-b-2 border-gray focus:ring-0 focus:border-yellow"
@@ -130,7 +135,12 @@ const Submissions = () => {
                   )}
                 </label>
                 <label className="block mb-4">
-                  <span className="uppercase font-semibold">Email Address</span>
+                  <span className="uppercase font-semibold">
+                    Email Address
+                    <span className="font-semibold text-lg text-magenta ml-[2px]">
+                      *
+                    </span>
+                  </span>
                   <input
                     type="text"
                     className="mt-0 block w-full px-2 border-0 border-b-2 border-gray focus:ring-0 focus:border-yellow"
@@ -151,7 +161,12 @@ const Submissions = () => {
                   />
                 </label>
                 <label className="block mb-4">
-                  <span className="uppercase font-semibold">Theme</span>
+                  <span className="uppercase font-semibold">
+                    Theme
+                    <span className="font-semibold text-lg text-magenta ml-[2px]">
+                      *
+                    </span>
+                  </span>
                   <select
                     {...register('select')}
                     className="form-select appearance-none
@@ -185,6 +200,9 @@ const Submissions = () => {
                 <label className="block mb-4">
                   <span className="uppercase font-semibold">
                     Upload your paper
+                    <span className="font-semibold text-lg text-magenta ml-[2px]">
+                      *
+                    </span>
                   </span>
                   <input
                     type="file"
