@@ -4,6 +4,15 @@ const nextConfig = {
   images: {
     domains: ['media.graphcms.com'],
   },
+  env: {
+    GRAPHCMS_ENDPOINT: process.env.GRAPHCMS_ENDPOINT,
+    SENDGRID_REGISTRATION_KEY: process.env.SENDGRID_REGISTRATION_KEY,
+    SENDGRID_SUBMISSIONS_KEY: proces.env.SENDGRID_SUBMISSIONS_KEY,
+    AIRTABLE_API_KEY: process.env.AIRTABLE_API_KEY,
+    BASE_ID: process.env.BASE_ID,
+    REGISTRATION_TAB: process.env.REGISTRATION_TAB,
+    SUBMISSIONS_TAB: process.env.SUBMISSIONS_TAB,
+  },
 };
 
 module.exports = nextConfig;
