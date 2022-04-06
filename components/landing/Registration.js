@@ -19,7 +19,18 @@ const Registration = () => {
     handleSubmit,
     formState: { errors, isSubmitSuccessful },
   } = useForm({ resolver: yupResolver(schema) });
-  const onSubmit = (data) => console.log(data);
+
+  const onSubmit = async (data, e) => {
+    e.preventDefault();
+    await fetch('/api/registration', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+  };
+
   return (
     <div className="relative" id="registration">
       <div className="bg-violet h-[15rem] w-[15rem] rounded-full absolute -top-[8rem] -left-[5rem] tablet:h-[26rem] tablet:w-[26rem] tablet:-top-[15rem] tablet:-left-[10rem]" />

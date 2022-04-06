@@ -49,10 +49,20 @@ const Submissions = () => {
     reset,
     formState: { errors, isSubmitSuccessful },
   } = useForm({ resolver: yupResolver(schema) });
-  const onSubmit = (data) => {
+
+  const onSubmit = async (data, e) => {
     console.log(data);
+    e.preventDefault();
+    await fetch('/api/submission', {
+      method: 'POST',
+      header: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
     reset();
   };
+
   return (
     <>
       <CustomHead pageTitle="Call for Papers and Abstracts" />
@@ -160,7 +170,7 @@ const Submissions = () => {
                                 mt-1
                                 focus:bg-white focus:ring-yellow focus:border-yellow focus:outline-none"
                   >
-                    <option selected>Select a Theme</option>
+                    <option defaultValue>Select a Theme</option>
 
                     {themes.map((theme) => (
                       <option key={theme} value={theme}>
