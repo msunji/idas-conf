@@ -1,4 +1,7 @@
+import postAirtableData from '../../utils/postAirtableData';
+
 const mail = require('@sendgrid/mail');
+
 mail.setApiKey(process.env.SENDGRID_REGISTRATION_KEY);
 
 export default function handler(req, res) {
@@ -6,6 +9,10 @@ export default function handler(req, res) {
   const message = `Hello ${fullName}!\r\n
                    This is to confirm your registration for the 2018 IDAS International Conference happening on November 24-25 at National Chengchi University.
                   `;
+  postAirtableData(process.env.REGISTRATION_TAB, {
+    'Full Name': fullName,
+    Email: email,
+  });
   mail
     .send({
       to: email,
