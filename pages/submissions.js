@@ -51,16 +51,17 @@ const Submissions = () => {
   } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmit = async (data, e) => {
-    console.log(data);
+    // const formData = new FormData();
+
+    // for (const name in data) {
+    //   formData.append(name, data[name]);
+    // }
     e.preventDefault();
     await fetch('/api/submission', {
       method: 'POST',
-      header: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
+      body: new FormData(submissionsForm),
     });
-    reset();
+    // reset();
   };
 
   return (
@@ -116,7 +117,12 @@ const Submissions = () => {
           </p>
           <Spacer />
           <div className="w-full tablet:w-3/5 tablet:max-w-2/4 tablet:mx-auto">
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form
+              id="submissionsForm"
+              method="post"
+              encType="multipart/form-data"
+              onSubmit={handleSubmit(onSubmit)}
+            >
               <div className="mb-8">
                 <label className="block mb-4">
                   <span className="uppercase font-semibold">
@@ -127,6 +133,7 @@ const Submissions = () => {
                   </span>
                   <input
                     type="text"
+                    name="fullName"
                     className="mt-0 block w-full px-2 border-0 border-b-2 border-gray focus:ring-0 focus:border-yellow"
                     {...register('fullName')}
                   />
@@ -143,6 +150,7 @@ const Submissions = () => {
                   </span>
                   <input
                     type="text"
+                    name="email"
                     className="mt-0 block w-full px-2 border-0 border-b-2 border-gray focus:ring-0 focus:border-yellow"
                     {...register('email')}
                   />
@@ -155,6 +163,7 @@ const Submissions = () => {
                     School or Organization
                   </span>
                   <input
+                    name="org"
                     type="text"
                     className="mt-0 block w-full px-2 border-0 border-b-2 border-gray focus:ring-0 focus:border-yellow"
                     {...register('org')}
@@ -168,6 +177,7 @@ const Submissions = () => {
                     </span>
                   </span>
                   <select
+                    name="select"
                     {...register('select')}
                     className="form-select appearance-none
                                 block
@@ -205,6 +215,7 @@ const Submissions = () => {
                     </span>
                   </span>
                   <input
+                    name="file"
                     type="file"
                     accept="application/pdf,application/msword,
                             application/vnd.openxmlformats-officedocument.wordprocessingml.document"
