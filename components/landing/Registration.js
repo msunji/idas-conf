@@ -22,13 +22,6 @@ const Registration = () => {
 
   const onSubmit = async (data, e) => {
     e.preventDefault();
-    await fetch('/api/registration', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
   };
 
   return (
