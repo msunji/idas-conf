@@ -1,4 +1,4 @@
-import RightArrow from '../../public/assets/images/icons/RightArrow';
+import RightArrow from '/public/assets/images/icons/RightArrow';
 import { useState } from 'react';
 
 const Question = ({ question, answer }) => {
