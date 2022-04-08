@@ -107,7 +107,7 @@ const Submissions = () => {
           <p>
             Your file must be a <strong>PDF file</strong>, and must be{' '}
             <strong>5MB or smaller</strong>. For larger files, please email us
-            at <strong>IDAS.program@gmail.com</strong> with your name and
+            at <strong>idasconf2018@protonmail.com</strong> with your name and
             abstract title included in the subject.
           </p>
           <Spacer />
