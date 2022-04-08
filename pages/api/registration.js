@@ -16,6 +16,7 @@ export default function handler(req, res) {
     });
     return res.status(200).json({ status: 'ok', body: req.body });
   } catch (err) {
+    console.log(err);
     return res.status(450).json({ status: 'error', error: err.message });
   }
 }
