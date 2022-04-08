@@ -1,9 +1,4 @@
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { string, object, mixed } from 'yup';
 import CustomHead from '../components/CustomHead';
-import FormError from '../components/form/FormError';
-import FormSuccess from '../components/form/FormSuccess';
 import PageContent from '../components/layout/PageContent';
 import PageHeader from '../components/layout/PageHeader';
 import Spacer from '../components/layout/Spacer';
@@ -25,40 +20,6 @@ const Highlight = ({ children }) => {
 };
 
 const Submissions = () => {
-  const schema = object({
-    fullName: string().required('Please enter your full name'),
-    email: string()
-      .email('Please enter a valid email address')
-      .required('Please enter a valid email address'),
-    org: string(),
-    select: mixed('Please select a theme')
-      .required('Please select a theme')
-      .oneOf(themes, 'Please select a theme'),
-    file: mixed()
-      .test('required', 'Please provide a file', (value) => {
-        return value && value.length;
-      })
-      .test('fileSize', 'The file is too large', (value, context) => {
-        return value && value[0] && value[0].size <= 5242880;
-      }),
-  }).required();
-
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors, isSubmitSuccessful },
-  } = useForm({ resolver: yupResolver(schema) });
-
-  const onSubmit = async (data, e) => {
-    e.preventDefault();
-    await fetch('/api/submission', {
-      method: 'POST',
-      body: new FormData(submissionsForm),
-    });
-    reset();
-  };
-
   return (
     <>
       <CustomHead pageTitle="Call for Papers and Abstracts" />
@@ -111,131 +72,6 @@ const Submissions = () => {
             abstract title included in the subject.
           </p>
           <Spacer />
-          {/* <div className="w-full tablet:w-3/5 tablet:max-w-2/4 tablet:mx-auto">
-            <form
-              id="submissionsForm"
-              method="post"
-              encType="multipart/form-data"
-              onSubmit={handleSubmit(onSubmit)}
-            >
-              <div className="mb-8">
-                <label className="block mb-4">
-                  <span className="uppercase font-semibold">
-                    Full Name
-                    <span className="font-semibold text-lg text-magenta ml-[2px]">
-                      *
-                    </span>
-                  </span>
-                  <input
-                    type="text"
-                    name="fullName"
-                    className="mt-0 block w-full px-2 border-0 border-b-2 border-gray focus:ring-0 focus:border-yellow"
-                    {...register('fullName')}
-                  />
-                  {errors.fullName?.message && (
-                    <FormError>{errors.fullName?.message}</FormError>
-                  )}
-                </label>
-                <label className="block mb-4">
-                  <span className="uppercase font-semibold">
-                    Email Address
-                    <span className="font-semibold text-lg text-magenta ml-[2px]">
-                      *
-                    </span>
-                  </span>
-                  <input
-                    type="text"
-                    name="email"
-                    className="mt-0 block w-full px-2 border-0 border-b-2 border-gray focus:ring-0 focus:border-yellow"
-                    {...register('email')}
-                  />
-                  {errors.email?.message && (
-                    <FormError>{errors.email?.message}</FormError>
-                  )}
-                </label>
-                <label className="block mb-4">
-                  <span className="uppercase font-semibold">
-                    School or Organization
-                  </span>
-                  <input
-                    name="org"
-                    type="text"
-                    className="mt-0 block w-full px-2 border-0 border-b-2 border-gray focus:ring-0 focus:border-yellow"
-                    {...register('org')}
-                  />
-                </label>
-                <label className="block mb-4">
-                  <span className="uppercase font-semibold">
-                    Theme
-                    <span className="font-semibold text-lg text-magenta ml-[2px]">
-                      *
-                    </span>
-                  </span>
-                  <select
-                    name="select"
-                    {...register('select')}
-                    className="form-select appearance-none
-                                block
-                                w-full
-                                px-3
-                                py-1.5
-                                text-base
-                                font-normal
-                                text-gray-700
-                                bg-white bg-clip-padding bg-no-repeat
-                                border border-solid border-grey
-                                rounded
-                                transition
-                                ease-in-out
-                                mt-1
-                                focus:bg-white focus:ring-yellow focus:border-yellow focus:outline-none"
-                  >
-                    <option defaultValue>Select a Theme</option>
-
-                    {themes.map((theme) => (
-                      <option key={theme} value={theme}>
-                        {theme}
-                      </option>
-                    ))}
-                  </select>
-                  {errors.select?.message && (
-                    <FormError>{errors.select?.message}</FormError>
-                  )}
-                </label>
-                <label className="block mb-4">
-                  <span className="uppercase font-semibold">
-                    Upload your paper
-                    <span className="font-semibold text-lg text-magenta ml-[2px]">
-                      *
-                    </span>
-                  </span>
-                  <input
-                    name="file"
-                    type="file"
-                    accept="application/pdf"
-                    className="mt-2 cursor-pointer block w-full text-sm text-gray-500 px-2 border-0 border-b-2 file:mr-4 file:mb-2 file:py-2 file:px-4 file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 focus:ring-0 focus:outline-none"
-                    {...register('file')}
-                  />
-                  {errors.file?.message && (
-                    <FormError>{errors.file?.message}</FormError>
-                  )}
-                </label>
-              </div>
-              <div className="flex items-center justify-between">
-                <button
-                  type="submit"
-                  className="font-semibold bg-blue300 text-white px-4 py-2 mr-4  hover:bg-yellow hover:text-blue300 focus:ring-0 focus:outline-yellow"
-                >
-                  Submit
-                </button>
-                <div>
-                  {isSubmitSuccessful && (
-                    <FormSuccess>Paper successfully submitted!</FormSuccess>
-                  )}
-                </div>
-              </div>
-            </form>
-          </div> */}
         </div>
       </PageContent>
     </>
