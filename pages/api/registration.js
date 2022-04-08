@@ -1,16 +1,16 @@
 import postAirtableData from '../../utils/postAirtableData';
 import sendMail from '../../utils/sendMail';
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   try {
     const { fullName, email } = req.body;
-    sendMail(
+    await sendMail(
       fullName,
       email,
       process.env.SENDGRID_REGISTRATION_TEMPLATE,
       'IDAS Conference Registration Confirmation'
     );
-    postAirtableData(process.env.REGISTRATION_TAB, {
+    await postAirtableData(process.env.REGISTRATION_TAB, {
       'Full Name': fullName,
       Email: email,
     });
