@@ -1,5 +1,8 @@
 import Link from 'next/link';
-import routes from '../../public/data/routes.json';
+import Mail from '/public/assets/images/icons/Mail';
+import Tel from '/public/assets/images/icons/Tel';
+import Location from '/public/assets/images/icons/Location';
+import routes from '/public/data/routes.json';
 
 const DropdownLinks = ({ links }) => {
   return (
@@ -34,20 +37,17 @@ const Footer = () => {
         <div>
           <h3>Related Links</h3>
           <ul className="footer-links">
-            <li className="before:content-['—']">
-              —
+            <li className="list-item-dash">
               <a className="ml-2" href="https://www.nccu.edu.tw/">
                 National Chengchi University
               </a>
             </li>
-            <li className="before:content-['—']">
-              —
+            <li className="list-item-dash">
               <a className="ml-2" href="https://css.nccu.edu.tw/en/">
                 College of Social Sciences
               </a>
             </li>
-            <li className="before:content-['—']">
-              —
+            <li className="list-item-dash">
               <a
                 className="ml-2"
                 href="https://internationalprograms.nccu.edu.tw/home-idas/"
@@ -61,8 +61,12 @@ const Footer = () => {
           <h3>Contact Us</h3>
           <ul>
             <li>
-              No. 64, Section 2, Zhinan Road, Wenshan District, Taipei City,
-              Taiwan
+              <Location />
+              <span>
+                {' '}
+                No. 64, Section 2, Zhinan Road, Wenshan District, Taipei City,
+                Taiwan
+              </span>
             </li>
             <li>+886-2-2939-3091 Ext. 51278</li>
             <li>idas@nccu.edu.tw</li>
