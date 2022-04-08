@@ -10,7 +10,7 @@ export default function handler(req, res) {
       process.env.SENDGRID_REGISTRATION_TEMPLATE,
       'IDAS Conference Registration Confirmation'
     );
-    postAirtableData(process.env.REGISTRATION_TAB, {
+    postAirtableData('Registration', {
       'Full Name': fullName,
       Email: email,
     });
