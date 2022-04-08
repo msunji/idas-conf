@@ -106,12 +106,12 @@ const Submissions = () => {
           <h2>Submit your Abstract</h2>
           <p>
             Your file must be a <strong>PDF file</strong>, and must be{' '}
-            <strong>5MB or smaller</strong>. For larger files, please email us
-            at <strong>idasconf2018@protonmail.com</strong> with your name and
+            <strong>5MB or smaller</strong>. Please email us at{' '}
+            <strong>idasconf2018@protonmail.com</strong> with your name and
             abstract title included in the subject.
           </p>
           <Spacer />
-          <div className="w-full tablet:w-3/5 tablet:max-w-2/4 tablet:mx-auto">
+          {/* <div className="w-full tablet:w-3/5 tablet:max-w-2/4 tablet:mx-auto">
             <form
               id="submissionsForm"
               method="post"
@@ -235,7 +235,7 @@ const Submissions = () => {
                 </div>
               </div>
             </form>
-          </div>
+          </div> */}
         </div>
       </PageContent>
     </>
