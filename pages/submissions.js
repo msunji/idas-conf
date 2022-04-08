@@ -51,11 +51,6 @@ const Submissions = () => {
   } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmit = async (data, e) => {
-    // const formData = new FormData();
-
-    // for (const name in data) {
-    //   formData.append(name, data[name]);
-    // }
     e.preventDefault();
     await fetch('/api/submission', {
       method: 'POST',
@@ -87,7 +82,8 @@ const Submissions = () => {
             should be sent no later than <strong>November 9, 2018**</strong>
           </p>
           <Highlight>
-            * Papers need to be submitted before September 21 17:00 GMT+8 <br />
+            * Abstracts need to be submitted before September 21 17:00 GMT+8{' '}
+            <br />
             ** Full papers need to be sent no later than November 9 17:00 GMT+8
           </Highlight>
           <Spacer />
@@ -107,10 +103,9 @@ const Submissions = () => {
             ))}
           </ol>
           <Spacer />
-          <h2>Submit a Paper</h2>
+          <h2>Submit your Abstract</h2>
           <p>
-            Your file must either be a{' '}
-            <strong>PDF or a Microsoft Word file</strong>, and must be{' '}
+            Your file must either be a <strong>PDF file</strong>, and must be{' '}
             <strong>5MB or smaller</strong>. For larger files, please email us
             at <strong>IDAS.program@gmail.com</strong> with your name and
             abstract title included in the subject.
@@ -217,8 +212,7 @@ const Submissions = () => {
                   <input
                     name="file"
                     type="file"
-                    accept="application/pdf,application/msword,
-                            application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                    accept="application/pdf"
                     className="mt-2 cursor-pointer block w-full text-sm text-gray-500 px-2 border-0 border-b-2 file:mr-4 file:mb-2 file:py-2 file:px-4 file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 focus:ring-0 focus:outline-none"
                     {...register('file')}
                   />
