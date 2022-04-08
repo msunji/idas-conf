@@ -6,7 +6,7 @@ const Location = ({ width, height }) => {
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
-      strokeWidth={1.5}
+      strokeWidth={2}
     >
       <path
         strokeLinecap="round"
