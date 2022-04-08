@@ -1,5 +1,5 @@
 const mail = require('@sendgrid/mail');
-mail.setApiKey(process.env.SENDGRID_SUBMISSIONS_KEY);
+mail.setApiKey(process.env.SENDGRID_REGISTRATION_KEY);
 
 const sendMail = (nameInput, emailInput, templateId, msgSubject) => {
   const message = {
