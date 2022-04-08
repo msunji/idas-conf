@@ -68,8 +68,14 @@ const Footer = () => {
                 Taiwan
               </span>
             </li>
-            <li>+886-2-2939-3091 Ext. 51278</li>
-            <li>idas@nccu.edu.tw</li>
+            <li>
+              <Tel />
+              <span>+886-2-2939-3091 Ext. 51278</span>
+            </li>
+            <li>
+              <Mail />
+              <span>idas@nccu.edu.tw</span>
+            </li>
           </ul>
         </div>
       </div>
