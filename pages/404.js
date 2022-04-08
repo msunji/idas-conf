@@ -1,11 +1,9 @@
 import CustomHead from '../components/CustomHead';
 import Link from 'next/link';
 import PageHeader from '../components/layout/PageHeader';
-import PageContent from '../components/layout/PageContent';
 import routes from '/public/data/routes.json';
 
 const Custom404 = () => {
-  console.log(routes);
   return (
     <>
       <CustomHead pageTitle="Page not found" />
