@@ -48,12 +48,17 @@ const Subtitle = () => {
           </div>
           <div className="relative top-[95px] grid grid-cols-6 tablet:static tablet:ml-10">
             <div className="col-span-4 row-span-3">
-              <Image src={gridImgTop} alt="Picture of someone gesturing" />
+              <Image
+                src={gridImgTop}
+                alt="Picture of someone gesturing"
+                placeholder="blur"
+              />
             </div>
             <div className="col-start-5 col-span-2 row-start-4">
               <Image
                 src={gridImgBottom}
                 alt="Picture of hands linked together"
+                placeholder="blur"
               />
             </div>
           </div>

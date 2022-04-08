@@ -36,7 +36,11 @@ const Registration = () => {
       <div className="bg-violet h-[15rem] w-[15rem] rounded-full absolute -top-[8rem] -left-[5rem] tablet:h-[26rem] tablet:w-[26rem] tablet:-top-[15rem] tablet:-left-[10rem]" />
       <div className="container grid gap-8 py-11 md:py-16 tablet:grid-cols-2 bg-yellow">
         <div className="self-center">
-          <Image src={registerImg} alt="Picture of a group of people" />
+          <Image
+            src={registerImg}
+            alt="Picture of a group of people"
+            placeholder="blur"
+          />
         </div>
         <div>
           <h2 className="mb-6 md:text-4xl">Keen to join us?</h2>
