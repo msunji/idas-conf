@@ -15,23 +15,22 @@ const CustomHead = ({ pageTitle }) => {
         content="2018 IDAS International Conference. Transformation and Challenges in Asia Pacific: The Next Decade and Beyond. Nov 24-25, 2018 at NCCU, Taipei."
       />
       <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/public/apple-touch-icon.png"
+      />
+      <link
         rel="icon"
         type="image/png"
         sizes="32x32"
-        href="/favicon-32x32.png"
+        href="/public/favicon-32x32.png"
       />
       <link
         rel="icon"
         type="image/png"
         sizes="16x16"
-        href="/favicon-16x16.png"
+        href="/public/favicon-16x16.png"
       />
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="/apple-touch-icon.png"
-      />
-      <link rel="manifest" href="/site.webmanifest" />
       <meta name="theme-color" content="#ffffff" />
     </Head>
   );
