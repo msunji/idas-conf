@@ -56,7 +56,7 @@ const Submissions = () => {
       method: 'POST',
       body: new FormData(submissionsForm),
     });
-    // reset();
+    reset();
   };
 
   return (
@@ -105,7 +105,7 @@ const Submissions = () => {
           <Spacer />
           <h2>Submit your Abstract</h2>
           <p>
-            Your file must either be a <strong>PDF file</strong>, and must be{' '}
+            Your file must be a <strong>PDF file</strong>, and must be{' '}
             <strong>5MB or smaller</strong>. For larger files, please email us
             at <strong>IDAS.program@gmail.com</strong> with your name and
             abstract title included in the subject.
