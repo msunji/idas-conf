@@ -9,6 +9,8 @@
     margin: 0;
     scroll-behavior: smooth;
     @apply leading-relaxed text-blue300;
+    min-height: 100vh;
+    height: 100vh;
   }
   * {
     @apply box-border;

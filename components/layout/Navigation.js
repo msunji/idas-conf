@@ -72,11 +72,11 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`inset-0 fixed top-0 left-0 z-10 w-screen ${navBg} text-4xl tablet:text-base`}
+      className={`fixed top-0 left-0 z-10 w-screen ${navBg} text-4xl tablet:text-base`}
     >
       <div className={`container relative tablet:hidden`}>
         <div
-          className="absolute right-0 pt-8 px-[inherit]"
+          className="absolute z-10 right-0 pt-8 px-[inherit]"
           onClick={handleMobileToggle}
         >
           <div>
@@ -98,12 +98,12 @@ const Navigation = () => {
         </div>
       </div>
       <div
-        className={`container max-w-7xl w-screen ${navPadding} bg-violet h-screen text-white tracking-wide ${
-          openMobile ? 'flex flex-col justify-end' : 'hidden'
+        className={`container max-w-7xl w-screen ${navPadding} bg-violet text-white h-screen tracking-wide ${
+          openMobile ? 'flex flex-col justify-center' : 'hidden'
         } tablet:flex tablet:flex-row tablet:h-auto tablet:justify-between tablet:items-center tablet:text-blue300 tablet:bg-transparent`}
       >
         <Logo />
-        <ul className="gap-4 flex flex-col tablet:w-auto tablet:flex-row">
+        <ul className="gap-4 flex flex-col mb-10 tablet:mb-0 tablet:w-auto tablet:flex-row">
           {routes.map(({ page, route }) => (
             <Link key={page} href={route} passHref>
               <a className="hover:no-underline" onClick={closeMobile}>
@@ -120,7 +120,6 @@ const Navigation = () => {
             </Link>
           ))}
         </ul>
-        <div className="h-px w-full my-8 bg-white block tablet:hidden" />
         <RegistrationBtn closeMobile={closeMobile} />
       </div>
     </nav>
