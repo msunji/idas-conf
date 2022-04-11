@@ -72,7 +72,7 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 z-10 w-screen ${navBg} text-4xl tablet:text-base`}
+      className={`inset-0 fixed top-0 left-0 z-10 w-screen ${navBg} text-4xl tablet:text-base`}
     >
       <div className={`container relative tablet:hidden`}>
         <div
@@ -110,8 +110,8 @@ const Navigation = () => {
                 <li>
                   <span
                     className={`py-1 px-1 ${
-                      pathname == route ? 'bg-yellow' : ''
-                    } hover:bg-yellow`}
+                      pathname == route ? 'border-b-4 border-yellow' : ''
+                    } hover:border-b-4 border-yellow`}
                   >
                     {page}
                   </span>
